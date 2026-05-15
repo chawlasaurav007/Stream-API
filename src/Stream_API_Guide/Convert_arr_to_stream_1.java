@@ -1,9 +1,6 @@
 package Stream_API_Guide;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
@@ -31,5 +28,28 @@ public class Convert_arr_to_stream_1 {
         set.add(14);
         set.add(15);
         set.stream().forEach(System.out::println);
+
+        // When we have a Map like HashMap, we can convert it into Stream using entrySet().stream() method
+        //her why we use .entrySet() method ?
+        //* `HashMap` does not support direct `stream()`.
+        // so we cant do this map.stream()
+        //* So first we convert map into a `Set` using `entrySet()`.
+        // map.entrySet()->so by this map gets convert into set and set supports stream
+        // so we write like this map.entrySet().stream()
+        // Simple flow:
+        //HashMap
+        //   ↓
+        //entrySet()
+        //   ↓
+        //  Set
+        //   ↓
+        // stream()
+        Map<Integer, String> map = new HashMap<>();
+
+        map.put(1, "Java");
+        map.put(2, "Spring");
+        map.put(3, "Microservices");
+
+        map.entrySet().stream().forEach(System.out::println);
     }
 }
