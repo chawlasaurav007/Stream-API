@@ -4,7 +4,7 @@ import java.util.*;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-public class Convert_arr_to_stream_1 {
+public class ConvertToStream_1 {
     public static void main(String[] args) {
         //primitive array
         int primitiveArray[] = {1,2,3,4};
