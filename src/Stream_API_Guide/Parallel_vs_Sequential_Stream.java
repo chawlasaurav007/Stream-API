@@ -1,0 +1,32 @@
+package Stream_API_Guide;
+
+import java.util.Arrays;
+
+public class Parallel_vs_Sequential_Stream {
+    public static void main(String[] args) {
+        int[] intArray = new int[1000000];
+        Arrays.fill(intArray, 2);
+
+        // Calculate sum of squares using sequential stream
+        long startTime = System.currentTimeMillis();
+        final int sequentialSum = Arrays.stream(intArray)
+                .map(n -> n * n)
+                .sum();
+        long endTime = System.currentTimeMillis();
+        System.out.println("Sequential sum: "
+                + sequentialSum);
+        System.out.println("Time Taken by Sequential Stream: "
+                + (endTime - startTime) + " ms");
+
+        // Calculate sum of squares using parallel stream
+        startTime = System.currentTimeMillis();
+        final int parallelSum = Arrays.stream(intArray)
+                .parallel()
+                .map(n -> n * n)
+                .sum();
+        endTime = System.currentTimeMillis();
+        System.out.println("Parallel sum: " + parallelSum);
+        System.out.println("Time Taken by Parallel Stream: "
+                + (endTime - startTime) + " ms");
+    }
+}
