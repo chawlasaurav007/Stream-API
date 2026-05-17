@@ -20,5 +20,10 @@ public class FindMax_9 {
         Integer i = list.stream()
                 .max(Comparator.naturalOrder()).get();
         System.out.println("by using max() method so max is " + i);
+
+        int maxNum = list.stream()
+                .mapToInt(j -> j.intValue())
+                .max().getAsInt();
+        System.out.println("by using max() method but convert it into primitive first " + maxNum);
     }
 }
