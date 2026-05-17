@@ -5,7 +5,6 @@ import Level_3.dto.Employee;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
-import java.util.OptionalDouble;
 import java.util.stream.Collectors;
 
 public class GroupEmployeeByDeptAndCalculateAvgSalary_6 {
